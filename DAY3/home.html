@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="home.css">
+        <title>Login Page</title>
+    </head>
+    <body>
+        <br><br><br><br><br><br><br><br><br><br> 
+        <script>
+              function hhh() {
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+
+  if (username === "admin" && password === "123") {
+    console.log =("Welcome"); 
+    
+  } else {
+    console.log =("Not Registered") 
+  }
+  document.getElementById("demo").innerHTML = console.log;
+}
+              
+            </script>
+        <div class="container">
+            <div class="form">
+                <form action="">  
+                    <br>             
+                    <input type="text" placeholder="username" id="username" required><br>
+    
+                    <input type="text" placeholder="password" id="password" required><br>
+    
+                    <button type="button" onclick="hhh()" class="registerbutton button" style="background-color: green; ">Login </button>
+
+                    <p style="text-align: center; color: grey;">Not registered? <a href="#" style="text-align: center; color: green;">Create an account</a></p>
+                    <p id="demo"></p>
+
+                </form>
+            </div>
+        </div>
+    
+    </body>
+    <footer>
+
+    </footer>
+</html>

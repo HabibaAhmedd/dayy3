@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="home.css">
+
+
+	<title>To Do List</title>
+</head>
+
+<body>
+    <br><br><br><br><br><br><br>
+    <div class="container">
+    <h1>Task</h1>
+    <form id="todo-form">
+      <input type="text" id="todo-input" placeholder="Task Name">
+      <button type="submit">Add</button>
+    </form>
+    <ul id="todo-list">
+    </ul>
+</div>
+    <script>
+      const form = document.getElementById('todo-form');
+      const input = document.getElementById('todo-input');
+      const list = document.getElementById('todo-list');
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const newTodo = document.createElement('li');
+        const todoText = document.createTextNode(input.value);
+        newTodo.appendChild(todoText);
+        list.appendChild(newTodo);
+        input.value = '';
+
+        const deleteButton = document.createElement('button');
+        const deleteText = document.createTextNode('Delete');
+        deleteButton.appendChild(deleteText);
+        newTodo.appendChild(deleteButton);
+
+        const doneButton = document.createElement('button');
+        const doneText = document.createTextNode('Done');
+        doneButton.appendChild(doneText);
+        newTodo.appendChild(doneButton);
+
+        deleteButton.addEventListener('click', () => {
+          list.removeChild(newTodo);
+        });
+
+        doneButton.addEventListener('click', () => {
+          newTodo.classList.toggle('done');
+        });
+      });
+    </script>
+
+    <style>
+      .done {
+        text-decoration: line-through;
+      }
+    </style>
+  </body>
+
+</html>
